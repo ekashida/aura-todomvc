@@ -2,6 +2,9 @@
 
   <aura:set attribute="title" value="Aura TodoMVC" />
 
+  <!-- disable reset/normalize css -->
+  <aura:set attribute="auraResetStyle" value="" />
+
   <aura:set attribute="extraStyleTags">
     <link rel="stylesheet" href="/css/todomvc-common/base.css" />
   </aura:set>
