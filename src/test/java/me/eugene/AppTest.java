@@ -26,7 +26,7 @@ public class AppTest extends TestCase {
 
     public void testApp() throws Exception {
         DefaultHttpClient http = new DefaultHttpClient();
-        HttpGet get = new HttpGet("http://localhost:8080/aura-todomvc/aura-todomvc.app");
+        HttpGet get = new HttpGet("http://localhost:8080/todo/todo.app");
 
         HttpParams params = get.getParams();
         HttpClientParams.setRedirecting(params, true);
