@@ -1,5 +1,8 @@
 <aura:application template="todo:template">
 
+  <aura:attribute name="todoItems" type="Object[]" />
+  <aura:attribute name="visibilityFilter" type="String" default="ACTIVE" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
+
   <section class="todoapp">
     <header class="header">
       <h1>todos</h1>
