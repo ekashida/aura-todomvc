@@ -1,0 +1,9 @@
+<aura:component isTemplate="true" extends="aura:template">
+
+  <aura:set attribute="title" value="Aura TodoMVC" />
+
+  <aura:set attribute="extraStyleTags">
+    <link rel="stylesheet" href="/css/todomvc-common/base.css" />
+  </aura:set>
+
+</aura:component>
