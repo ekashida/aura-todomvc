@@ -1,3 +1,30 @@
 <aura:application template="todo:template">
-hello web, from the Aura sample app aura-todomvc
+
+  <section class="todoapp">
+    <header class="header">
+      <h1>todos</h1>
+      <input class="new-todo" type="text" placeholder="What needs to be done?"></input>
+    </header>
+    <div class="main">
+      <ul class="todo-list">
+        <li>
+          <div class="view">
+            <input class="toggle" type="checkbox"></input>
+            <label>foo</label>
+            <button class="destroy"></button>
+          </div>
+          <input class="edit" value="foo"></input>
+        </li>
+      </ul>
+    </div>
+    <footer class="footer">
+      <span class="todo-count">1 item left</span>
+      <ul class="filters">
+        <li><a href="#/" class="selected">All</a></li>
+        <li><a href="#/active">Active</a></li>
+        <li><a href="#/completed">Completed</a></li>
+      </ul>
+    </footer>
+  </section>
+
 </aura:application>
