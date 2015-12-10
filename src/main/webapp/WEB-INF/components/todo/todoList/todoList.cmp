@@ -1,0 +1,19 @@
+<aura:component>
+
+  <aura:attribute name="todoItems" type="Object[]" default="[]" />
+  <aura:attribute name="visibleItems" type="Object[]" default="[]" />
+  <aura:attribute name="visibilityFilter" type="String" default="ACTIVE" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
+
+  <ul class="todo-list">
+    <aura:iteration items="{!v.visibleItems}" var="visibleItem">
+    <li>
+      <div class="view">
+        <input class="toggle" type="checkbox"></input>
+        <label>{!visibleItem.text}</label>
+        <button class="destroy" data-todo-id="{!visibleItem.id}"></button>
+      </div>
+    </li>
+    </aura:iteration>
+  </ul>
+
+</aura:component>

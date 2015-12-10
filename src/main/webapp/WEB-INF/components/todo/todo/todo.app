@@ -9,16 +9,7 @@
       <todo:addTodo todoItems="{!v.todoItems}" />
     </header>
     <div class="main">
-      <ul class="todo-list">
-        <li>
-          <div class="view">
-            <input class="toggle" type="checkbox"></input>
-            <label>foo</label>
-            <button class="destroy"></button>
-          </div>
-          <input class="edit" value="foo"></input>
-        </li>
-      </ul>
+      <todo:todoList todoItems="{!v.todoItems}" visibilityFilter="{!v.visibilityFilter}" />
     </div>
     <footer class="footer">
       <span class="todo-count">1 item left</span>
