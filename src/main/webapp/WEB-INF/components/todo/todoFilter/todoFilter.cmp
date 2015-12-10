@@ -1,0 +1,30 @@
+<aura:component>
+
+  <aura:attribute name="visibilityFilter" type="String" default="ACTIVE" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
+
+  <ul class="filters">
+    <!-- Should be a list of buttons, but todomvc-common/base.css assumes anchors -->
+    <li>
+      <a
+        onclick="{!c.handleFilterClick}"
+        data-filter-type="ALL"
+        href="#/"
+      >All</a>
+    </li>
+    <li>
+      <a
+        onclick="{!c.handleFilterClick}"
+        data-filter-type="ACTIVE"
+        href="#/active"
+      >Active</a>
+    </li>
+    <li>
+      <a
+        onclick="{!c.handleFilterClick}"
+        data-filter-type="COMPLETED"
+        href="#/completed"
+      >Completed</a>
+    </li>
+  </ul>
+
+</aura:component>

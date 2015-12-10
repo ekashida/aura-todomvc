@@ -13,11 +13,7 @@
     </div>
     <footer class="footer">
       <span class="todo-count">1 item left</span>
-      <ul class="filters">
-        <li><a href="#/" class="selected">All</a></li>
-        <li><a href="#/active">Active</a></li>
-        <li><a href="#/completed">Completed</a></li>
-      </ul>
+      <todo:todoFilter visibilityFilter="{!v.visibilityFilter}" />
     </footer>
   </section>
 
