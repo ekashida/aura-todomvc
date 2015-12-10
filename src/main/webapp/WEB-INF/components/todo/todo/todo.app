@@ -1,12 +1,12 @@
 <aura:application template="todo:template">
 
-  <aura:attribute name="todoItems" type="Object[]" />
+  <aura:attribute name="todoItems" type="Object[]" default="[]" />
   <aura:attribute name="visibilityFilter" type="String" default="ACTIVE" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
 
   <section class="todoapp">
     <header class="header">
       <h1>todos</h1>
-      <input class="new-todo" type="text" placeholder="What needs to be done?"></input>
+      <todo:addTodo todoItems="{!v.todoItems}" />
     </header>
     <div class="main">
       <ul class="todo-list">
