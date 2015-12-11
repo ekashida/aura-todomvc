@@ -1,0 +1,18 @@
+<aura:component>
+
+  <aura:attribute name="href" type="String" />
+  <aura:attribute name="linkText" type="String" />
+  <aura:attribute name="handleClick" type="Object" />
+  <aura:attribute name="className" type="String" />
+
+  <!--
+    We don't really need a link component in this todo app but I wanted to try
+    my hand at a purely presentational component
+  -->
+  <a
+    href="{!v.href}"
+    class="{!v.className}"
+    onclick="{!v.handleClick}"
+  >{!v.linkText}</a>
+
+</aura:component>

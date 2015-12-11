@@ -1,29 +1,31 @@
 <aura:component>
 
-  <aura:attribute name="visibilityFilter" type="String" default="ACTIVE" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
+  <aura:attribute name="visibilityFilter" type="String" />
 
   <ul class="filters">
-    <!-- Should be a list of buttons, but todomvc-common/base.css assumes anchors -->
     <li>
-      <a
-        onclick="{!c.handleFilterClick}"
-        data-filter-type="ALL"
+      <todo:link
         href="#/"
-      >All</a>
+        linkText="All"
+        className="{!v.visibilityFilter == 'ALL' ? 'selected' : ''}"
+        handleClick="{!c.handleAllFilter}"
+      />
     </li>
     <li>
-      <a
-        onclick="{!c.handleFilterClick}"
-        data-filter-type="ACTIVE"
+      <todo:link
         href="#/active"
-      >Active</a>
+        linkText="Active"
+        className="{!v.visibilityFilter == 'ACTIVE' ? 'selected' : ''}"
+        handleClick="{!c.handleActiveFilter}"
+      />
     </li>
     <li>
-      <a
-        onclick="{!c.handleFilterClick}"
-        data-filter-type="COMPLETED"
+      <todo:link
         href="#/completed"
-      >Completed</a>
+        linkText="Completed"
+        className="{!v.visibilityFilter == 'COMPLETED' ? 'selected' : ''}"
+        handleClick="{!c.handleCompletedFilter}"
+      />
     </li>
   </ul>
 
