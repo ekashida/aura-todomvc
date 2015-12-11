@@ -4,19 +4,19 @@
     var formEl = component.getElement();
     var inputEl = formEl.getElementsByClassName('new-todo')[0];
     if (inputEl) {
-      var todoItem = inputEl.value;
+      var todoText = inputEl.value;
       inputEl.value = '';
-      return todoItem;
+      return todoText;
     }
   },
 
   handleSubmit: function (component) {
-    var todoItem = this.getNewTodoItem(component);
-    todoItem = todoItem.trim();
+    var todoText = this.getNewTodoItem(component);
+    todoText = todoText.trim();
 
-    if (todoItem) {
+    if (todoText) {
       var todoItems = component.get('v.todoItems') || [];
-      todoItems.unshift(this.createTodo(todoItem));
+      todoItems.unshift(this.createTodo(todoText));
       component.set('v.todoItems', todoItems);
     }
   },
