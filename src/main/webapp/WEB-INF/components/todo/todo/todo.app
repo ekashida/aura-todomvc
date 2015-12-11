@@ -18,7 +18,8 @@
       />
     </div>
     <footer class="footer">
-      <span class="todo-count">{!v.activeTodoCount} item(s) left</span>
+      <!-- It seems we lose space between consecutive expressions -->
+      <span class="todo-count">{!v.activeTodoCount} {!v.activeTodoCount == 1 ? ' item' : ' items'}  left</span>
       <todo:todoFilter visibilityFilter="{!v.visibilityFilter}" />
     </footer>
   </section>
