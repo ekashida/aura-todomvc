@@ -6,8 +6,8 @@
   <aura:attribute name="className" type="String" />
 
   <!--
-    We don't really need a link component in this todo app but I wanted to try
-    my hand at a purely presentational component
+    A link component is overkill for this todo app but it serves as an example
+    of how to implement a purely presentational component
   -->
   <a
     href="{!v.href}"
