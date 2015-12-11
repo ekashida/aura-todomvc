@@ -15,8 +15,8 @@
     }
   },
 
-  setVisibleItems: function (component, helper) {
-    var visibleItems = helper.filterVisibleItems(
+  setVisibleItems: function (component) {
+    var visibleItems = this.filterVisibleItems(
       component.get('v.todoItems'),
       component.get('v.visibilityFilter')
     );

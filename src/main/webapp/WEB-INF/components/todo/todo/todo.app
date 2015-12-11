@@ -2,6 +2,7 @@
 
   <aura:attribute name="todoItems" type="Object[]" default="[]" />
   <aura:attribute name="visibilityFilter" type="String" default="ACTIVE" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
+  <aura:attribute name="activeTodoCount" type="Integer" default="0" />
 
   <section class="todoapp">
     <header class="header">
@@ -12,7 +13,7 @@
       <todo:todoList todoItems="{!v.todoItems}" visibilityFilter="{!v.visibilityFilter}" />
     </div>
     <footer class="footer">
-      <span class="todo-count">1 item left</span>
+      <span class="todo-count">{#v.activeTodoCount} item(s) left</span>
       <todo:todoFilter visibilityFilter="{!v.visibilityFilter}" />
     </footer>
   </section>
