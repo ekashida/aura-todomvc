@@ -9,7 +9,7 @@
   <li class="{!v.completed ? 'completed' : ''}">
     <div class="view">
       <input
-        checked="{#v.completed}"
+        checked="{!v.completed}"
         class="toggle"
         data-todo-id="{#v.id}"
         onchange="{!v.parentTodoToggleHandler}"
