@@ -1,7 +1,7 @@
 <aura:application template="todo:template">
 
   <aura:attribute name="todoItems" type="Object[]" default="[]" />
-  <aura:attribute name="visibilityFilter" type="String" default="ACTIVE" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
+  <aura:attribute name="visibilityFilter" type="String" default="ALL" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
   <aura:attribute name="activeTodoCount" type="Integer" default="0" />
 
   <section class="todoapp">
