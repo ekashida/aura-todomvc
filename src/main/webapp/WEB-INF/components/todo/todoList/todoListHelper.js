@@ -19,7 +19,7 @@
       });
     } else {
       // return all by default
-      return todoList;
+      return [].concat(todoList);
     }
   },
 
