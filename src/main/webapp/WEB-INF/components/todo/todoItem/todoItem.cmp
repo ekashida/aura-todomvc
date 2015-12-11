@@ -6,7 +6,7 @@
   <aura:attribute name="todoDestroyHandler" type="Object" />
   <aura:attribute name="todoToggleHandler" type="Object" />
 
-  <li class="{#v.completed ? 'completed' : ''}">
+  <li class="{!v.completed ? 'completed' : ''}">
     <div class="view">
       <input
         checked="{#v.completed}"
