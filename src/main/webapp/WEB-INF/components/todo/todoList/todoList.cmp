@@ -11,6 +11,7 @@
       completed="{#visibleItem.completed}"
       id="{#visibleItem.id}"
       text="{#visibleItem.text}"
+      todoDestroyHandler="{!c.todoDestroyHandler}"
       todoToggleHandler="{!c.todoToggleHandler}"
     />
     </aura:iteration>
