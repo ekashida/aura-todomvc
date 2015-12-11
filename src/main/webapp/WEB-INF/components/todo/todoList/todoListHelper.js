@@ -1,5 +1,13 @@
 ({
 
+  destroyTodo: function (component, id) {
+    var updatedTodoItems = component.get('v.todoItems')
+      .filter(function (todoItem) {
+        return todoItem.id !== id;
+      });
+    component.set('v.todoItems', updatedTodoItems);
+  },
+
   filterVisibleItems: function (todoList, visibilityFilter) {
     if (visibilityFilter === 'COMPLETED') {
       return todoList.filter(function (todoItem) {
