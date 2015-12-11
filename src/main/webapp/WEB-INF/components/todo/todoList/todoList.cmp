@@ -7,19 +7,12 @@
 
   <ul class="todo-list">
     <aura:iteration items="{!v.visibleItems}" var="visibleItem">
-    <li>
-      <div class="view">
-        <input
-          class="toggle"
-          data-todo-id="{!visibleItem.id}"
-          onchange="{!c.todoToggleHandler}"
-          type="checkbox"
-          checked="{!visibleItem.completed}"
-        ></input>
-        <label>{!visibleItem.text}</label>
-        <button class="destroy" data-todo-id="{!visibleItem.id}"></button>
-      </div>
-    </li>
+    <todo:todoItem
+      completed="{#visibleItem.completed}"
+      id="{#visibleItem.id}"
+      text="{#visibleItem.text}"
+      todoToggleHandler="{!c.todoToggleHandler}"
+    />
     </aura:iteration>
   </ul>
 
