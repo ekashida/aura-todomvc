@@ -12,7 +12,7 @@
     <div class="main">
       <todo:todoList
         todoItems="{!v.todoItems}"
-        updateActiveTodoCount="{!c.updateActiveTodoCount}"
+        parentTodoToggleHandler="{!c.todoToggleHandler}"
         visibilityFilter="{!v.visibilityFilter}"
       />
     </div>

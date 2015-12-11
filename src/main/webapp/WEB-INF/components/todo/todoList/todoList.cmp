@@ -1,7 +1,7 @@
 <aura:component>
 
   <aura:attribute name="todoItems" type="Object[]" />
-  <aura:attribute name="updateActiveTodoCount" type="Object" />
+  <aura:attribute name="parentTodoToggleHandler" type="Object" />
   <aura:attribute name="visibleItems" type="Object[]" default="[]" />
   <aura:attribute name="visibilityFilter" type="String" default="ACTIVE" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
 

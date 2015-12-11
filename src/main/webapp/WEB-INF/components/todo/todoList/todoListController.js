@@ -6,10 +6,10 @@
 
   todoToggleHandler: function (component, event, helper) {
     var id = parseInt(event.target.dataset.todoId);
-    helper.toggleCompletedState(component, id);
+    helper.toggleTodo(component, id);
 
-    // updateActiveTodoCount is an action that can be executed by invoking run()
-    component.get('v.updateActiveTodoCount').run()
+    // parentTodoToggleHandler is an action that can be executed by invoking run()
+    component.get('v.parentTodoToggleHandler').run()
   }
 
 })

@@ -23,7 +23,7 @@
     component.set('v.visibleItems', visibleItems);
   },
 
-  toggleCompletedState: function (component, id) {
+  toggleTodo: function (component, id) {
     component.get('v.todoItems').map(function (todoItem) {
       if (todoItem.id === id) {
         todoItem.completed = !todoItem.completed;
