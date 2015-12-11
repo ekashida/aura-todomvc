@@ -10,10 +10,14 @@
       <todo:addTodo todoItems="{!v.todoItems}" />
     </header>
     <div class="main">
-      <todo:todoList todoItems="{!v.todoItems}" visibilityFilter="{!v.visibilityFilter}" />
+      <todo:todoList
+        todoItems="{!v.todoItems}"
+        updateActiveTodoCount="{!c.updateActiveTodoCount}"
+        visibilityFilter="{!v.visibilityFilter}"
+      />
     </div>
     <footer class="footer">
-      <span class="todo-count">{#v.activeTodoCount} item(s) left</span>
+      <span class="todo-count">{!v.activeTodoCount} item(s) left</span>
       <todo:todoFilter visibilityFilter="{!v.visibilityFilter}" />
     </footer>
   </section>

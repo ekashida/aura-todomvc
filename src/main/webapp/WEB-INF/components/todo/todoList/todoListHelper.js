@@ -21,6 +21,18 @@
       component.get('v.visibilityFilter')
     );
     component.set('v.visibleItems', visibleItems);
+  },
+
+  toggleCompletedState: function (component, id) {
+    component.get('v.todoItems').map(function (todoItem) {
+      if (todoItem.id === id) {
+        todoItem.completed = !todoItem.completed;
+      }
+      return todoItem;
+    });
+
+    // XXX: We intentionally don't update v.todoItems to avoid rerendering the
+    // list as the user completes or uncompletes tasks
   }
 
 })
