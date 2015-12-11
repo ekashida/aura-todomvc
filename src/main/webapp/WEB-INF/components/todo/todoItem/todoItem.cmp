@@ -3,8 +3,8 @@
   <aura:attribute name="completed" type="String" />
   <aura:attribute name="id" type="Integer" />
   <aura:attribute name="text" type="String" />
-  <aura:attribute name="todoDestroyHandler" type="Object" />
-  <aura:attribute name="todoToggleHandler" type="Object" />
+  <aura:attribute name="parentTodoDestroyHandler" type="Object" />
+  <aura:attribute name="parentTodoToggleHandler" type="Object" />
 
   <li class="{!v.completed ? 'completed' : ''}">
     <div class="view">
@@ -12,14 +12,14 @@
         checked="{#v.completed}"
         class="toggle"
         data-todo-id="{#v.id}"
-        onchange="{!v.todoToggleHandler}"
+        onchange="{!v.parentTodoToggleHandler}"
         type="checkbox"
       ></input>
       <label>{#v.text}</label>
       <button
         class="destroy"
         data-todo-id="{#v.id}"
-        onclick="{!v.todoDestroyHandler}"
+        onclick="{!v.parentTodoDestroyHandler}"
       ></button>
     </div>
   </li>
