@@ -1,6 +1,6 @@
 <aura:component>
 
-  <aura:attribute name="completed" type="String" />
+  <aura:attribute name="completed" type="Boolean" />
   <aura:attribute name="id" type="Integer" />
   <aura:attribute name="text" type="String" />
   <aura:attribute name="parentTodoDestroyHandler" type="Object" />
