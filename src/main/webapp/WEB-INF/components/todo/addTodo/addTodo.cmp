@@ -1,6 +1,7 @@
 <aura:component>
 
   <aura:attribute name="todoItems" type="Object[]" />
+  <aura:import library="redux:redux" property="Redux" />
 
   <form onsubmit="{!c.onSubmit}">
     <input class="new-todo" type="text" placeholder="What needs to be done?" autofocus="true"></input>

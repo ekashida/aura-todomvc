@@ -11,24 +11,15 @@
   },
 
   handleSubmit: function (component) {
+    var store = this.Redux.store;
+    var addTodo = this.Redux.actionCreator.addTodo;
     var todoText = this.getNewTodoItem(component);
-    todoText = todoText.trim();
 
-    if (todoText) {
-      var todoItems = component.get('v.todoItems') || [];
-      todoItems.unshift(this.createTodo(todoText));
-      component.set('v.todoItems', todoItems);
+    if (todoText.trim()) {
+      store.dispatch(
+        addTodo(todoText.trim())
+      );
     }
   },
-
-  createTodo: function (text) {
-    return {
-      id: this._todoId++,
-      text: text,
-      completed: false
-    };
-  },
-
-  _todoId: 0
 
 })

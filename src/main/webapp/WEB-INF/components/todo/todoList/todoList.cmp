@@ -1,4 +1,11 @@
-<aura:component>
+<aura:component extends="redux:provider">
+
+  <aura:handler name="change" value="{!v.state}" action="{!c.onStateChange}"/>
+
+  <aura:method name="stateSelector" action="{!c.stateSelector}" access="PUBLIC">
+    <aura:attribute name="appState" type="Object" />
+    <aura:attribute name="callback" type="Object" />
+  </aura:method>
 
   <aura:attribute name="todoItems" type="Object[]" />
   <aura:attribute name="visibleItems" type="Object[]" default="[]" />

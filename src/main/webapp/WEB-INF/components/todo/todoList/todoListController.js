@@ -1,7 +1,15 @@
 ({
 
-  init: function (component, event, helper) {
-    helper.setVisibleItems(component, helper);
+  onStateChange: function (component, event, helper) {
+    var state = event.getParam('value');
+    helper.render(component, state);
+  },
+
+  stateSelector: function (component, event) {
+    var args = event.getParam('arguments');
+    var appState = args.appState;
+    var callback = args.callback;
+    callback(appState.todos);
   },
 
   todoDestroyHandler: function (component, event, helper) {

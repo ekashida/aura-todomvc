@@ -1,5 +1,10 @@
 ({
 
+  render: function (component, state) {
+    var visibleItems = this.filterVisibleItems(state, component.get('v.visibilityFilter'));
+    component.set('v.visibleItems', visibleItems);
+  },
+
   destroyTodo: function (component, id) {
     var updatedTodoItems = component.get('v.todoItems')
       .filter(function (todoItem) {
