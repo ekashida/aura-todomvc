@@ -1,0 +1,11 @@
+<aura:component description="Redux boilerplate"
+                abstract="true"
+                support="PROTO">
+
+  <aura:handler name="init" action="{!c.init}" value="{!this}" />
+  <aura:attribute name="state" type="Object" />
+  <aura:import library="redux:redux" property="Redux" />
+
+  {!v.body}
+
+</aura:component>
