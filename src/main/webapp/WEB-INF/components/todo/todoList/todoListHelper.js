@@ -28,15 +28,10 @@
     }
   },
 
-  toggleTodo: function (component, id) {
-    var updatedTodoItems = component.get('v.todoItems')
-      .map(function (todoItem) {
-        if (todoItem.id === id) {
-          todoItem.completed = !todoItem.completed;
-        }
-        return todoItem;
-      });
-    component.set('v.todoItems', updatedTodoItems);
+  toggleTodo: function (id) {
+    this.Redux.store.dispatch(
+      this.Redux.actionCreator.toggleTodo(id)
+    );
   }
 
 })

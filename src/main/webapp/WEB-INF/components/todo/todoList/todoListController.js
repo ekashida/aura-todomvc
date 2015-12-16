@@ -21,8 +21,7 @@
   },
 
   todoToggleHandler: function (component, event, helper) {
-    var id = parseInt(event.target.dataset.todoId, 10);
-    helper.toggleTodo(component, id);
+    helper.toggleTodo(parseInt(event.target.dataset.todoId, 10));
   }
 
 })
