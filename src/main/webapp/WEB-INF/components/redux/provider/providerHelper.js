@@ -11,8 +11,8 @@
     var nextState = this.store.getState();
     var concrete = this.concrete;
 
-    if (concrete.stateSelector) {
-      concrete.stateSelector(nextState, function (selectedState) {
+    if (concrete.selectState) {
+      concrete.selectState(nextState, function (selectedState) {
         concrete.setState(selectedState);
       });
     } else {

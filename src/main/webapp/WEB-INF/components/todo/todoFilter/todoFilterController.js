@@ -6,7 +6,7 @@
     component.set('v.visibilityFilter', state.visibilityFilter);
   },
 
-  stateSelector: function (component, event) {
+  selectState: function (component, event) {
     var args = event.getParam('arguments');
     var appState = args.appState;
     var callback = args.callback;
