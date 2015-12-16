@@ -1,6 +1,7 @@
 function reducer ( // eslint-disable-line no-unused-vars
   actionTypes,
-  todos
+  appReducer,
+  todosReducer
 ) {
   return function (state, action) {
     var nextState = state || {};
@@ -10,12 +11,10 @@ function reducer ( // eslint-disable-line no-unused-vars
       case actionTypes.DESTROY_TODO:
       case actionTypes.TOGGLE_TODO:
         return Object.assign({}, nextState, {
-          todos: todos(nextState.todos, action)
+          todos: todosReducer(nextState.todos, action)
         });
       case actionTypes.SET_VISIBILITY_FILTER:
-        return Object.assign({}, nextState, {
-          visibilityFilter: action.filter
-        });
+        return Object.assign({}, nextState, appReducer(nextState, action));
       default:
         return nextState;
     }

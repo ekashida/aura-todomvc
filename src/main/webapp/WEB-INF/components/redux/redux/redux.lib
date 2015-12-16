@@ -5,7 +5,8 @@
   <aura:include name="initialize" imports="createStore,reducer" />
   <aura:include
     name="reducer"
-    imports="actionTypes,reducer-todos"
+    imports="actionTypes,reducerApp,reducerTodos"
   />
-  <aura:include name="reducer-todos" imports="actionTypes" />
+  <aura:include name="reducerApp" imports="actionTypes" />
+  <aura:include name="reducerTodos" imports="actionTypes" />
 </aura:library>
