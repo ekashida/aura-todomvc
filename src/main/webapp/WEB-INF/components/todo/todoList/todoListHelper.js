@@ -1,7 +1,7 @@
 ({
 
   render: function (component, state) {
-    var visibleItems = this.filterVisibleItems(state, component.get('v.visibilityFilter'));
+    var visibleItems = this.filterVisibleItems(state.todos, state.visibilityFilter);
     component.set('v.visibleItems', visibleItems);
   },
 
@@ -26,14 +26,6 @@
       // return all by default
       return [].concat(todoList);
     }
-  },
-
-  setVisibleItems: function (component) {
-    var visibleItems = this.filterVisibleItems(
-      component.get('v.todoItems'),
-      component.get('v.visibilityFilter')
-    );
-    component.set('v.visibleItems', visibleItems);
   },
 
   toggleTodo: function (component, id) {

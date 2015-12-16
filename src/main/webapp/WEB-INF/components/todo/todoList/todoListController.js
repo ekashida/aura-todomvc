@@ -9,7 +9,10 @@
     var args = event.getParam('arguments');
     var appState = args.appState;
     var callback = args.callback;
-    callback(appState.todos);
+    callback({
+      todos: appState.todos,
+      visibilityFilter: appState.visibilityFilter
+    });
   },
 
   todoDestroyHandler: function (component, event, helper) {
