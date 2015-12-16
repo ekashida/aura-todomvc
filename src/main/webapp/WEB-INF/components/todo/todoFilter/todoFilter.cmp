@@ -1,6 +1,8 @@
 <aura:component extends="redux:provider">
 
-  <aura:handler name="change" value="{!v.state}" action="{!c.onStateChange}"/>
+  <aura:method name="setState" action="{!c.setState}" access="PUBLIC">
+    <aura:attribute name="state" type="Object" />
+  </aura:method>
 
   <aura:method name="stateSelector" action="{!c.stateSelector}" access="PUBLIC">
     <aura:attribute name="appState" type="Object" />

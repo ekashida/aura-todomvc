@@ -1,10 +1,5 @@
 ({
 
-  setState: function (component, state) {
-    var visibleItems = this.filterVisibleItems(state.todos, state.visibilityFilter);
-    component.set('v.visibleItems', visibleItems);
-  },
-
   destroyTodo: function (id) {
     this.Redux.store.dispatch(
       this.Redux.actionCreator.destroyTodo(id)

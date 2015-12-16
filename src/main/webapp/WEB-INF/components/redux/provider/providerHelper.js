@@ -8,14 +8,15 @@
   },
 
   _connect: function () {
-    var state = this.Redux.store.getState();
+    var nextState = this.store.getState();
     var concrete = this.concrete;
+
     if (concrete.stateSelector) {
-      concrete.stateSelector(state, function (selectedState) {
-        concrete.set('v.state', selectedState);
+      concrete.stateSelector(nextState, function (selectedState) {
+        concrete.setState(selectedState);
       });
     } else {
-      concrete.set('v.state', state);
+      concrete.setState(nextState);
     }
   },
 
@@ -31,7 +32,7 @@
 
       this.Redux.store.subscribe(this._connect.bind({
         concrete: concrete,
-        Redux: this.Redux
+        store: this.Redux.store
       }));
     }
   }

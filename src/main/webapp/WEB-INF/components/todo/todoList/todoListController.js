@@ -1,18 +1,9 @@
 ({
 
-  onStateChange: function (component, event, helper) {
-    var state = event.getParam('value');
-    helper.setState(component, state);
-  },
-
-  stateSelector: function (component, event) {
-    var args = event.getParam('arguments');
-    var appState = args.appState;
-    var callback = args.callback;
-    callback({
-      todos: appState.todos,
-      visibilityFilter: appState.visibilityFilter
-    });
+  setState: function (component, event, helper) {
+    var state = event.getParam('arguments').state;
+    var visibleItems = helper.filterVisibleItems(state.todos, state.visibilityFilter);
+    component.set('v.visibleItems', visibleItems);
   },
 
   todoDestroyHandler: function (component, event, helper) {

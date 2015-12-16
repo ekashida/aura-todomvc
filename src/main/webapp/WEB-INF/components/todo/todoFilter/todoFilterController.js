@@ -1,13 +1,9 @@
 ({
 
-  onClick: function (component, event, helper) {
-    var type = event.target.dataset.type;
-    helper.onFilterClick(type);
-  },
-
-  onStateChange: function (component, event, helper) {
-    var state = event.getParam('value');
-    helper.setState(component, state);
+  setState: function (component, event, helper) {
+    var state = event.getParam('arguments').state;
+    component.set('v.activeTodoCount', state.activeTodoCount);
+    component.set('v.visibilityFilter', state.visibilityFilter);
   },
 
   stateSelector: function (component, event) {
@@ -20,6 +16,11 @@
       }).length,
       visibilityFilter: appState.visibilityFilter
     });
+  },
+
+  onClick: function (component, event, helper) {
+    var type = event.target.dataset.type;
+    helper.onFilterClick(type);
   }
 
 })
