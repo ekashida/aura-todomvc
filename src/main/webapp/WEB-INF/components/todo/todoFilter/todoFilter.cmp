@@ -8,7 +8,7 @@
   </aura:method>
 
   <aura:attribute name="visibilityFilter" type="String" />
-  <aura:attribute name="activeTodoCount" type="Integer" />
+  <aura:attribute name="activeTodoCount" type="Integer" default="0" />
 
   <!-- It seems we lose space between consecutive expressions -->
   <span class="todo-count">{!v.activeTodoCount} {!v.activeTodoCount == 1 ? ' item' : ' items'}  left</span>
