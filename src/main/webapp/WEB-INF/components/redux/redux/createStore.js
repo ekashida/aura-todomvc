@@ -1,4 +1,4 @@
-function createStore (actionCreator) {
+function createStore (actionCreator) { // eslint-disable-line no-unused-vars
   return function (reducer) {
     var state;
     var listeners = [];

@@ -1,4 +1,4 @@
-function reducer (actionTypes) {
+function reducer (actionTypes) { // eslint-disable-line no-unused-vars
   var nextTodoId = 0;
 
   return function (state, action) {

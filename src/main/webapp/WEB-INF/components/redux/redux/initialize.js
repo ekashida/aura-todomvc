@@ -1,5 +1,5 @@
 /* This is kind of ugly but Aura doesn't allow sharing between components and this is a step above hanging the store off the global object */
-function initialize (createStore, reducers) {
+function initialize (createStore, reducers) { // eslint-disable-line no-unused-vars
   var initialized;
   return function () {
     if (!initialized) {

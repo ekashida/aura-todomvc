@@ -1,4 +1,4 @@
-function actionCreator (actionTypes) {
+function actionCreator (actionTypes) { // eslint-disable-line no-unused-vars
   var creators = {
     init: function () {
       return { type: actionTypes.INIT };
