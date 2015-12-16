@@ -2,15 +2,14 @@
 
   render: function (component, state) {
     var visibleItems = this.filterVisibleItems(state.todos, state.visibilityFilter);
+    console.log('visibleItems', visibleItems, state);
     component.set('v.visibleItems', visibleItems);
   },
 
-  destroyTodo: function (component, id) {
-    var updatedTodoItems = component.get('v.todoItems')
-      .filter(function (todoItem) {
-        return todoItem.id !== id;
-      });
-    component.set('v.todoItems', updatedTodoItems);
+  destroyTodo: function (id) {
+    this.Redux.store.dispatch(
+      this.Redux.actionCreator.destroyTodo(id)
+    );
   },
 
   filterVisibleItems: function (todoList, visibilityFilter) {

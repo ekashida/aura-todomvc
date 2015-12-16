@@ -16,8 +16,7 @@
   },
 
   todoDestroyHandler: function (component, event, helper) {
-    var id = parseInt(event.target.dataset.todoId, 10);
-    helper.destroyTodo(component, id);
+    helper.destroyTodo(parseInt(event.target.dataset.todoId, 10));
   },
 
   todoToggleHandler: function (component, event, helper) {
