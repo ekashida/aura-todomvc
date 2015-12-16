@@ -1,0 +1,16 @@
+<aura:component>
+
+  <aura:attribute name="type" type="String" />
+  <aura:attribute name="visibilityFilter" type="String" />
+
+  <!--
+    A link component is overkill for this todo app but it serves as an example
+    of how to implement a purely presentational component
+  -->
+  <a
+    href="#"
+    class="{!v.visibilityFilter == v.type ? 'selected' : ''}"
+    data-type="{!v.type}"
+  >{!v.body}</a>
+
+</aura:component>

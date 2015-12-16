@@ -1,11 +1,8 @@
 ({
-  handleAllFilter: function (component) {
-    component.set('v.visibilityFilter', 'ALL');
-  },
-  handleActiveFilter: function (component) {
-    component.set('v.visibilityFilter', 'ACTIVE');
-  },
-  handleCompletedFilter: function (component) {
-    component.set('v.visibilityFilter', 'COMPLETED');
+
+  onClick: function (component, event, helper) {
+    var type = event.target.dataset.type;
+    component.set('v.visibilityFilter', type);
   }
+
 })
