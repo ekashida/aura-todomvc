@@ -14,6 +14,13 @@ function actionCreator (actionTypes) { // eslint-disable-line no-unused-vars
     };
   };
 
+  creators.destroyTodo = function (id) {
+    return {
+      type: actionTypes.DESTROY_TODO,
+      id: id
+    };
+  };
+
   creators.setVisibilityFilter = function (filter) {
     return {
       type: actionTypes.SET_VISIBILITY_FILTER,

@@ -26,11 +26,17 @@ function reducer (actionTypes) { // eslint-disable-line no-unused-vars
             id: nextTodoId++,
             text: action.text
           }].concat(nextState.todos)
-        })
+        });
+      case actionTypes.DESTROY_TODO:
+        return Object.assign({}, nextState, {
+          todos: nextState.todos.filter(function (todo) {
+            return todo.id !== action.id;
+          })
+        });
       case actionTypes.SET_VISIBILITY_FILTER:
         return Object.assign({}, nextState, {
           visibilityFilter: action.filter
-        })
+        });
       case actionTypes.TOGGLE_TODO:
         return Object.assign({}, nextState, {
           todos: nextState.todos.map(function (todo) {
