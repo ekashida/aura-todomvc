@@ -1,7 +1,7 @@
 <aura:library description="Redux for Aura">
   <aura:include name="actionCreator" imports="actionTypes" />
   <aura:include name="actionTypes" />
-  <aura:include name="createStore" imports="actionTypes" />
+  <aura:include name="createStore" imports="actionCreator" />
   <aura:include name="initialize" imports="createStore,reducer" />
   <aura:include name="reducer" imports="actionTypes" />
 </aura:library>

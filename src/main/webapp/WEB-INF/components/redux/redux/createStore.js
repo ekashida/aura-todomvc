@@ -1,6 +1,6 @@
-function createStore (actionTypes) {
-  return function (reducer, initialState) {
-    var state = initialState;
+function createStore (actionCreator) {
+  return function (reducer) {
+    var state;
     var listeners = [];
 
     function dispatch (action) {
@@ -25,7 +25,7 @@ function createStore (actionTypes) {
       return state;
     }
 
-    dispatch({ type: 'INIT' })
+    dispatch(actionCreator.init())
 
     return {
       dispatch: dispatch,

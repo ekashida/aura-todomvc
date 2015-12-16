@@ -2,9 +2,14 @@ function reducer (actionTypes) {
   var nextTodoId = 0;
 
   return function (state, action) {
-    var nextState = state || { todos: [] };
-    
+    var nextState = state;
+
     switch (action.type) {
+      case actionTypes.INIT:
+        return {
+          todos: [],
+          visibilityFilter: 'ALL'
+        };
       case actionTypes.ADD_TODO:
         return Object.assign({}, nextState, {
           todos: [{

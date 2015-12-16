@@ -1,5 +1,6 @@
 function actionTypes () {
-  return Object.keys({
-    ADD_TODO: "Add a new Todo to the list"
-  });
+  return {
+    ADD_TODO: 'ADD_TODO',
+    INIT: 'INIT'
+  };
 }
