@@ -12,7 +12,14 @@ function actionCreator (actionTypes) {
       id: nextId++,
       text: text
     };
-  }
+  };
+
+  creators.setVisibilityFilter = function (filter) {
+    return {
+      type: actionTypes.SET_VISIBILITY_FILTER,
+      filter: filter
+    };
+  };
 
   return creators;
 }

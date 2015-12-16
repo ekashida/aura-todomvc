@@ -18,6 +18,10 @@ function reducer (actionTypes) {
             text: action.text
           }].concat(nextState.todos)
         })
+      case actionTypes.SET_VISIBILITY_FILTER:
+        return Object.assign({}, nextState, {
+          visibilityFilter: action.filter
+        })
       default:
         return nextState;
     }
