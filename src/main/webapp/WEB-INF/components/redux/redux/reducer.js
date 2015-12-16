@@ -1,37 +1,46 @@
 function reducer (actionTypes) { // eslint-disable-line no-unused-vars
-  var nextTodoId = 0;
+
+  // TODO: Put these reducers into different files
 
   function toggleTodo (state, action) {
-    if (state.id === action.id) {
-      return Object.assign({}, state, {
-        completed: !state.completed
-      });
-    }
-    return state;
+    var nextState = state || [];
+    return nextState.map(function (todo) {
+      if (todo.id === action.id) {
+        return Object.assign({}, todo, {
+          completed: !todo.completed
+        });
+      }
+      return todo;
+    });
+  }
+
+  function addTodo (state, action) {
+    var nextState = state || [];
+    return [{
+      completed: false,
+      id: action.id,
+      text: action.text
+    }].concat(nextState);
+  }
+
+  function destroyTodo (state, action) {
+    var nextState = state || [];
+    return nextState.filter(function (todo) {
+      return todo.id !== action.id;
+    });
   }
 
   return function (state, action) {
-    var nextState = state;
+    var nextState = state || {};
 
     switch (action.type) {
-      case actionTypes.INIT:
-        return {
-          todos: [],
-          visibilityFilter: 'ALL'
-        };
       case actionTypes.ADD_TODO:
         return Object.assign({}, nextState, {
-          todos: [{
-            completed: false,
-            id: nextTodoId++,
-            text: action.text
-          }].concat(nextState.todos)
+          todos: addTodo(nextState.todos, action)
         });
       case actionTypes.DESTROY_TODO:
         return Object.assign({}, nextState, {
-          todos: nextState.todos.filter(function (todo) {
-            return todo.id !== action.id;
-          })
+          todos: destroyTodo(nextState.todos, action)
         });
       case actionTypes.SET_VISIBILITY_FILTER:
         return Object.assign({}, nextState, {
@@ -39,9 +48,7 @@ function reducer (actionTypes) { // eslint-disable-line no-unused-vars
         });
       case actionTypes.TOGGLE_TODO:
         return Object.assign({}, nextState, {
-          todos: nextState.todos.map(function (todo) {
-            return toggleTodo(todo, action);
-          })
+          todos: toggleTodo(nextState.todos, action)
         });
       default:
         return nextState;
