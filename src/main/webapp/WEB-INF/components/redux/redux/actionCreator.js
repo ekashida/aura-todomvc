@@ -21,5 +21,12 @@ function actionCreator (actionTypes) { // eslint-disable-line no-unused-vars
     };
   };
 
+  creators.toggleTodo = function (id) {
+    return {
+      type: actionTypes.TOGGLE_TODO,
+      id: id
+    };
+  };
+
   return creators;
 }

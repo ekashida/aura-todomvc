@@ -1,6 +1,15 @@
 function reducer (actionTypes) { // eslint-disable-line no-unused-vars
   var nextTodoId = 0;
 
+  function toggleTodo (state, action) {
+    if (state.id === action.id) {
+      return Object.assign({}, state, {
+        completed: !state.completed
+      });
+    }
+    return state;
+  }
+
   return function (state, action) {
     var nextState = state;
 
@@ -22,6 +31,12 @@ function reducer (actionTypes) { // eslint-disable-line no-unused-vars
         return Object.assign({}, nextState, {
           visibilityFilter: action.filter
         })
+      case actionTypes.TOGGLE_TODO:
+        return Object.assign({}, nextState, {
+          todos: nextState.todos.map(function (todo) {
+            return toggleTodo(todo, action);
+          })
+        });
       default:
         return nextState;
     }
