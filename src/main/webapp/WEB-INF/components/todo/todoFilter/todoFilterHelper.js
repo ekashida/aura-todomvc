@@ -7,7 +7,8 @@
   },
 
   render: function (component, state) {
-    component.set('v.visibilityFilter', state);
+    component.set('v.activeTodoCount', state.activeTodoCount);
+    component.set('v.visibilityFilter', state.visibilityFilter);
   }
 
 })

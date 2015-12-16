@@ -15,6 +15,9 @@
     var appState = args.appState;
     var callback = args.callback;
     callback({
+      activeTodoCount: appState.todos.filter(function (todo) {
+        return !todo.completed;
+      }).length,
       visibilityFilter: appState.visibilityFilter
     });
   }
