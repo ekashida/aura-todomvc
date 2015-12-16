@@ -15,14 +15,16 @@ function actionCreator (actionTypes) { // eslint-disable-line no-unused-vars
 
   var creators = {};
 
-  creators.addTodo = function (text) {
+  creators.addTodo = (function () {
     var nextId = 0;
-    return {
-      type: actionTypes.ADD_TODO,
-      id: nextId++,
-      text: text
+    return function (text) {
+      return {
+        type: actionTypes.ADD_TODO,
+        id: nextId++,
+        text: text
+      };
     };
-  };
+  }());
 
   // creators.destroyTodo = makeActionCreator(actionTypes.DESTROY_TODO, 'id');
   creators.destroyTodo = function (id) {
