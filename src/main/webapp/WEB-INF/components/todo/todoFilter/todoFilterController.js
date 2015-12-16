@@ -7,7 +7,7 @@
 
   onStateChange: function (component, event, helper) {
     var state = event.getParam('value');
-    helper.render(component, state);
+    helper.setState(component, state);
   },
 
   stateSelector: function (component, event) {

@@ -1,8 +1,7 @@
 ({
 
-  render: function (component, state) {
+  setState: function (component, state) {
     var visibleItems = this.filterVisibleItems(state.todos, state.visibilityFilter);
-    console.log('visibleItems', visibleItems, state);
     component.set('v.visibleItems', visibleItems);
   },
 
