@@ -7,7 +7,6 @@
     <aura:attribute name="callback" type="Object" />
   </aura:method>
 
-  <aura:attribute name="todoItems" type="Object[]" />
   <aura:attribute name="visibleItems" type="Object[]" default="[]" />
   <aura:attribute name="visibilityFilter" type="String" default="ACTIVE" description="Possible values are 'ALL', 'ACTIVE', and 'COMPLETED'" />
 
