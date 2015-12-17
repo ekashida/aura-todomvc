@@ -1,40 +1,31 @@
 ({
 
-  _isSubscribed: {},
-
   init: function (component) {
+    // Initialize Redux (i.e., create the redux store) once, the first time a
+    // component extending the redux provider is initialized
+    // TODO: Find a better place to put this...
     this.Redux.initialize();
-    this._subscribe(component);
-  },
 
-  _connect: function () {
-    var nextState = this.store.getState();
-    var concrete = this.concrete;
-
-    if (concrete.selectState) {
-      concrete.selectState(nextState, function (selectedState) {
-        concrete.setState(selectedState);
-      });
-    } else {
-      concrete.setState(nextState);
+    // This check exists because when a component extends another component,
+    // the init event of the super is fired more than once...
+    if (!component.unsubscribe) {
+      this.subscribe(component);
     }
   },
 
-  _subscribe: function (component) {
+  subscribe: function (component) {
+    var store = this.Redux.store;
     var concrete = component.getConcreteComponent();
-    var id = concrete.getGlobalId();
-    var isSubscribed = this._isSubscribed[id];
 
-    // We use a flag here because the init event is part of the rendering
-    // lifecycle and we only want to subscribe on the first init
-    if (!isSubscribed) {
-      this._isSubscribed[id] = true;
-
-      this.Redux.store.subscribe(this._connect.bind({
-        concrete: concrete,
-        store: this.Redux.store
-      }));
-    }
+    concrete.unsubscribe = store.subscribe(function () {
+      if (concrete.selectState) {
+        concrete.selectState(store.getState(), function (selectedState) {
+          concrete.setState(selectedState);
+        });
+      } else {
+        concrete.setState(store.getState());
+      }
+    }.bind(this));
   }
 
 })
