@@ -34,6 +34,8 @@ To create an action and dispatch it in a helper method:
 })
 ```
 
+See the [addTodo][] component for an example.
+
 ## Redux Provider
 
 To subscribe to state changes, extend the redux provider and expose a `setState()` method:
@@ -68,7 +70,7 @@ exposing a `selectState()` method:
 </aura:method>
 ```
 
-For example:
+Return the parts of the state that your component is interested in:
 
 ```js
 ({
@@ -81,6 +83,10 @@ For example:
 })
 ```
 
+See the [todoFilter][] component for an example.
+
+[addTodo]: https://github.com/ekashida/aura-todomvc/tree/master/src/main/webapp/WEB-INF/components/todo/addTodo
 [Aura]: https://github.com/forcedotcom/aura
 [Redux]: http://redux.js.org/index.html
+[todoFilter]: https://github.com/ekashida/aura-todomvc/tree/master/src/main/webapp/WEB-INF/components/todo/todoFilter
 [TodoMVC]: http://todomvc.com/
